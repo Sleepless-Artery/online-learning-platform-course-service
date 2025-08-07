@@ -19,6 +19,7 @@ git clone https://github.com/Sleepless-Artery/online-learning-platform-course-se
 - Spring Cloud
 - Kafka
 - Redis
+- gRPC
 - Flyway
 - SQL
 - YML
