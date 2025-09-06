@@ -15,7 +15,7 @@ spring:
       name: course-service
 
     consul:
-      host: ${CONSUL_HOST:consul-server}
+      host: ${CONSUL_HOST:consul-client}
       port: ${CONSUL_PORT:8500}
       discovery:
         service-name: ${SPRING_APPLICATION_NAME:course-service}
