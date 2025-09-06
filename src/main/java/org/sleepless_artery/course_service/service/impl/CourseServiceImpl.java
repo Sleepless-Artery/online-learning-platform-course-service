@@ -49,6 +49,8 @@ public class CourseServiceImpl implements CourseService {
     @Transactional(readOnly = true)
     @Cacheable(value = "courses", key = "#id")
     public CourseResponseDto findById(Long id) {
+        log.info("Getting course with id {}", id);
+
         return courseMapper.toCourseResponseDto(
                 courseRepository.findById(id)
                         .orElseThrow(() -> {
@@ -64,6 +66,8 @@ public class CourseServiceImpl implements CourseService {
             String title, Long authorId, String description,
             LocalDate startingDate, LocalDate endingDate, Pageable pageable
     ) {
+        log.info("Getting courses according to criteria");
+
         return courseRepository.findAll(
                 Specification.where(CourseSpecifications.titleLike(title))
                         .and(CourseSpecifications.hasAuthorId(authorId))
